@@ -1732,6 +1732,7 @@ data InstanceType
   | T2_Nano
   | T2_Small
   | T2_XLarge
+  | T3_Medium
   | X1_16XLarge
   | X1_32XLarge
   | X1e_16XLarge
@@ -1842,6 +1843,7 @@ instance FromText InstanceType where
         "t2.nano" -> pure T2_Nano
         "t2.small" -> pure T2_Small
         "t2.xlarge" -> pure T2_XLarge
+        "t3.medium" -> pure T3_Medium
         "x1.16xlarge" -> pure X1_16XLarge
         "x1.32xlarge" -> pure X1_32XLarge
         "x1e.16xlarge" -> pure X1e_16XLarge
@@ -1952,6 +1954,7 @@ instance ToText InstanceType where
         T2_Nano -> "t2.nano"
         T2_Small -> "t2.small"
         T2_XLarge -> "t2.xlarge"
+        T3_Medium -> "t3.medium"
         X1_16XLarge -> "x1.16xlarge"
         X1_32XLarge -> "x1.32xlarge"
         X1e_16XLarge -> "x1e.16xlarge"
