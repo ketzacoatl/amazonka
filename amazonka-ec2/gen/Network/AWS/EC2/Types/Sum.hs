@@ -1635,7 +1635,13 @@ instance FromXML InstanceStateName where
     parseXML = parseXMLText "InstanceStateName"
 
 data InstanceType
-  = C1_Medium
+  = A1_Medium
+  | A1_Large
+  | A1_XLarge
+  | A1_2XLarge
+  | A1_4XLarge
+  | A1_Metal
+  | C1_Medium
   | C1_XLarge
   | C3_2XLarge
   | C3_4XLarge
@@ -1652,7 +1658,20 @@ data InstanceType
   | C5_4XLarge
   | C5_9XLarge
   | C5_Large
+  | C5_Metal
   | C5_XLarge
+  | C5d_Large
+  | C5d_XLarge
+  | C5d_2XLarge
+  | C5d_4XLarge
+  | C5d_9XLarge
+  | C5d_18XLarge
+  | C5n_Large
+  | C5n_XLarge
+  | C5n_2XLarge
+  | C5n_4XLarge
+  | C5n_9XLarge
+  | C5n_18XLarge
   | CC1_4XLarge
   | CC2_8XLarge
   | CG1_4XLarge
@@ -1663,11 +1682,19 @@ data InstanceType
   | D2_XLarge
   | F1_16XLarge
   | F1_2XLarge
+  | F1_4XLarge
   | G2_2XLarge
   | G2_8XLarge
   | G3_16XLarge
   | G3_4XLarge
   | G3_8XLarge
+  | G3s_XLarge
+  | G4dn_12XLarge
+  | G4dn_16XLarge
+  | G4dn_2XLarge
+  | G4dn_4XLarge
+  | G4dn_8XLarge
+  | G4dn_XLarge
   | H1_16XLarge
   | H1_2XLarge
   | H1_4XLarge
@@ -1684,6 +1711,15 @@ data InstanceType
   | I3_8XLarge
   | I3_Large
   | I3_XLarge
+  | I3_Metal
+  | I3en_Large
+  | I3en_Metal
+  | I3en_XLarge
+  | I3en_2XLarge
+  | I3en_3XLarge
+  | I3en_6XLarge
+  | I3en_12XLarge
+  | I3en_24XLarge
   | M1_Large
   | M1_Medium
   | M1_Small
@@ -1707,12 +1743,55 @@ data InstanceType
   | M5_4XLarge
   | M5_Large
   | M5_XLarge
+  | M5_Metal
+  | M5a_Large
+  | M5a_XLarge
+  | M5a_2XLarge
+  | M5a_4XLarge
+  | M5a_8XLarge
+  | M5a_12XLarge
+  | M5a_16XLarge
+  | M5a_24XLarge
+  | M5ad_Large
+  | M5ad_XLarge
+  | M5ad_2XLarge
+  | M5ad_4XLarge
+  | M5ad_8XLarge
+  | M5ad_12XLarge
+  | M5ad_16XLarge
+  | M5ad_24XLarge
+  | M5d_Large
+  | M5d_XLarge
+  | M5d_2XLarge
+  | M5d_4XLarge
+  | M5d_8XLarge
+  | M5d_12XLarge
+  | M5d_16XLarge
+  | M5d_24XLarge
+  | M5d_Metal
+  | M5dn_Large
+  | M5dn_XLarge
+  | M5dn_2XLarge
+  | M5dn_4XLarge
+  | M5dn_8XLarge
+  | M5dn_12XLarge
+  | M5dn_16XLarge
+  | M5dn_24XLarge
+  | M5n_Large
+  | M5n_XLarge
+  | M5n_2XLarge
+  | M5n_4XLarge
+  | M5n_8XLarge
+  | M5n_12XLarge
+  | M5n_16XLarge
+  | M5n_24XLarge
   | P2_16XLarge
   | P2_8XLarge
   | P2_XLarge
   | P3_16XLarge
   | P3_2XLarge
   | P3_8XLarge
+  | P3dn_24XLarge
   | R3_2XLarge
   | R3_4XLarge
   | R3_8XLarge
@@ -1724,6 +1803,56 @@ data InstanceType
   | R4_8XLarge
   | R4_Large
   | R4_XLarge
+  | R5_Metal
+  | R5_Large
+  | R5_XLarge
+  | R5_2XLarge
+  | R5_4XLarge
+  | R5_8XLarge
+  | R5_12XLarge
+  | R5_16XLarge
+  | R5_24XLarge
+  | R5a_Large
+  | R5a_XLarge
+  | R5a_2XLarge
+  | R5a_4XLarge
+  | R5a_8XLarge
+  | R5a_12XLarge
+  | R5a_16XLarge
+  | R5a_24XLarge
+  | R5ad_Large
+  | R5ad_XLarge
+  | R5ad_2XLarge
+  | R5ad_4XLarge
+  | R5ad_8XLarge
+  | R5ad_12XLarge
+  | R5ad_16XLarge
+  | R5ad_24XLarge
+  | R5d_Large
+  | R5d_XLarge
+  | R5d_2XLarge
+  | R5d_4XLarge
+  | R5d_8XLarge
+  | R5d_12XLarge
+  | R5d_16XLarge
+  | R5d_24XLarge
+  | R5d_Metal
+  | R5dn_Large
+  | R5dn_XLarge
+  | R5dn_2XLarge
+  | R5dn_4XLarge
+  | R5dn_8XLarge
+  | R5dn_12XLarge
+  | R5dn_16XLarge
+  | R5dn_24XLarge
+  | R5n_Large
+  | R5n_XLarge
+  | R5n_2XLarge
+  | R5n_4XLarge
+  | R5n_8XLarge
+  | R5n_12XLarge
+  | R5n_16XLarge
+  | R5n_24XLarge
   | T1_Micro
   | T2_2XLarge
   | T2_Large
@@ -1732,7 +1861,23 @@ data InstanceType
   | T2_Nano
   | T2_Small
   | T2_XLarge
+  | T3_2XLarge
+  | T3_Large
   | T3_Medium
+  | T3_Micro
+  | T3_Nano
+  | T3_Small
+  | T3a_2XLarge
+  | T3_XLarge
+  | T3a_Large
+  | T3a_Medium
+  | T3a_Micro
+  | T3a_Nano
+  | T3a_Small
+  | T3a_XLarge
+  | U6TB1_Metal
+  | U9TB1_Metal
+  | U12TB1_Metal
   | X1_16XLarge
   | X1_32XLarge
   | X1e_16XLarge
@@ -1741,11 +1886,24 @@ data InstanceType
   | X1e_4XLarge
   | X1e_8XLarge
   | X1e_XLarge
+  | Z1d_Metal
+  | Z1d_Large
+  | Z1d_XLarge
+  | Z1d_2XLarge
+  | Z1d_3XLarge
+  | Z1d_6XLarge
+  | Z1d_12XLarge
   deriving (Eq, Ord, Read, Show, Enum, Bounded, Data, Typeable, Generic)
 
 
 instance FromText InstanceType where
     parser = takeLowerText >>= \case
+        "a1.2xlarge" -> pure A1_2XLarge
+        "a1.4xlarge" -> pure A1_4XLarge
+        "a1.large" -> pure A1_Large
+        "a1.medium" -> pure A1_Medium
+        "a1.metal" -> pure A1_Metal
+        "a1.xlarge" -> pure A1_XLarge
         "c1.medium" -> pure C1_Medium
         "c1.xlarge" -> pure C1_XLarge
         "c3.2xlarge" -> pure C3_2XLarge
@@ -1763,7 +1921,20 @@ instance FromText InstanceType where
         "c5.4xlarge" -> pure C5_4XLarge
         "c5.9xlarge" -> pure C5_9XLarge
         "c5.large" -> pure C5_Large
+        "c5.metal" -> pure C5_Metal
         "c5.xlarge" -> pure C5_XLarge
+        "c5d.large" -> pure C5d_Large
+        "c5d.xlarge" -> pure C5d_XLarge
+        "c5d.2xlarge" -> pure C5d_2XLarge
+        "c5d.4xlarge" -> pure C5d_4XLarge
+        "c5d.9xlarge" -> pure C5d_9XLarge
+        "c5d.18xlarge" -> pure C5d_18XLarge
+        "c5n.large" -> pure C5n_Large
+        "c5n.xlarge" -> pure C5n_XLarge
+        "c5n.2xlarge" -> pure C5n_2XLarge
+        "c5n.4xlarge" -> pure C5n_4XLarge
+        "c5n.9xlarge" -> pure C5n_9XLarge
+        "c5n.18xlarge" -> pure C5n_18XLarge
         "cc1.4xlarge" -> pure CC1_4XLarge
         "cc2.8xlarge" -> pure CC2_8XLarge
         "cg1.4xlarge" -> pure CG1_4XLarge
@@ -1774,11 +1945,19 @@ instance FromText InstanceType where
         "d2.xlarge" -> pure D2_XLarge
         "f1.16xlarge" -> pure F1_16XLarge
         "f1.2xlarge" -> pure F1_2XLarge
+        "f1.4xlarge" -> pure F1_4XLarge
         "g2.2xlarge" -> pure G2_2XLarge
         "g2.8xlarge" -> pure G2_8XLarge
         "g3.16xlarge" -> pure G3_16XLarge
         "g3.4xlarge" -> pure G3_4XLarge
         "g3.8xlarge" -> pure G3_8XLarge
+        "g3s.xlarge" -> pure G3s_XLarge
+        "g4dn.12xlarge" -> pure G4dn_12XLarge
+        "g4dn.16xlarge" -> pure G4dn_16XLarge
+        "g4dn.2xlarge" -> pure G4dn_2XLarge
+        "g4dn.4xlarge" -> pure G4dn_4XLarge
+        "g4dn.8xlarge" -> pure G4dn_8XLarge
+        "g4dn.xlarge" -> pure G4dn_XLarge
         "h1.16xlarge" -> pure H1_16XLarge
         "h1.2xlarge" -> pure H1_2XLarge
         "h1.4xlarge" -> pure H1_4XLarge
@@ -1795,6 +1974,15 @@ instance FromText InstanceType where
         "i3.8xlarge" -> pure I3_8XLarge
         "i3.large" -> pure I3_Large
         "i3.xlarge" -> pure I3_XLarge
+        "i3.metal" -> pure I3_Metal
+        "i3en.large" -> pure I3en_Large
+        "i3en.xlarge" -> pure I3en_XLarge
+        "i3en.2xlarge" -> pure I3en_2XLarge
+        "i3en.3xlarge" -> pure I3en_3XLarge
+        "i3en.6xlarge" -> pure I3en_6XLarge
+        "i3en.12xlarge" -> pure I3en_12XLarge
+        "i3en.24xlarge" -> pure I3en_24XLarge
+        "i3en.metal" -> pure I3en_Metal
         "m1.large" -> pure M1_Large
         "m1.medium" -> pure M1_Medium
         "m1.small" -> pure M1_Small
@@ -1818,12 +2006,55 @@ instance FromText InstanceType where
         "m5.4xlarge" -> pure M5_4XLarge
         "m5.large" -> pure M5_Large
         "m5.xlarge" -> pure M5_XLarge
+        "m5.metal" -> pure M5_Metal
+        "m5a.large" -> pure M5a_Large
+        "m5a.xlarge" -> pure M5a_XLarge
+        "m5a.2xlarge" -> pure M5a_2XLarge
+        "m5a.4xlarge" -> pure M5a_4XLarge
+        "m5a.8xlarge" -> pure M5a_8XLarge
+        "m5a.12xlarge" -> pure M5a_12XLarge
+        "m5a.16xlarge" -> pure M5a_16XLarge
+        "m5a.24xlarge" -> pure M5a_24XLarge
+        "m5ad.large" -> pure M5ad_Large
+        "m5ad.xlarge" -> pure M5ad_XLarge
+        "m5ad.2xlarge" -> pure M5ad_2XLarge
+        "m5ad.4xlarge" -> pure M5ad_4XLarge
+        "m5ad.8xlarge" -> pure M5ad_8XLarge
+        "m5ad.12xlarge" -> pure M5ad_12XLarge
+        "m5ad.16xlarge" -> pure M5ad_16XLarge
+        "m5ad.24xlarge" -> pure M5ad_24XLarge
+        "m5d.large" -> pure M5d_Large
+        "m5d.xlarge" -> pure M5d_XLarge
+        "m5d.2xlarge" -> pure M5d_2XLarge
+        "m5d.4xlarge" -> pure M5d_4XLarge
+        "m5d.8xlarge" -> pure M5d_8XLarge
+        "m5d.12xlarge" -> pure M5d_12XLarge
+        "m5d.16xlarge" -> pure M5d_16XLarge
+        "m5d.24xlarge" -> pure M5d_24XLarge
+        "m5d.metal" -> pure M5d_Metal
+        "m5dn.large" -> pure M5dn_Large
+        "m5dn.xlarge" -> pure M5dn_XLarge
+        "m5dn.2xlarge" -> pure M5dn_2XLarge
+        "m5dn.4xlarge" -> pure M5dn_4XLarge
+        "m5dn.8xlarge" -> pure M5dn_8XLarge
+        "m5dn.12xlarge" -> pure M5dn_12XLarge
+        "m5dn.16xlarge" -> pure M5dn_16XLarge
+        "m5dn.24xlarge" -> pure M5dn_24XLarge
+        "m5n.large" -> pure M5n_Large
+        "m5n.xlarge" -> pure M5n_XLarge
+        "m5n.2xlarge" -> pure M5n_2XLarge
+        "m5n.4xlarge" -> pure M5n_4XLarge
+        "m5n.8xlarge" -> pure M5n_8XLarge
+        "m5n.12xlarge" -> pure M5n_12XLarge
+        "m5n.16xlarge" -> pure M5n_16XLarge
+        "m5n.24xlarge" -> pure M5n_24XLarge
         "p2.16xlarge" -> pure P2_16XLarge
         "p2.8xlarge" -> pure P2_8XLarge
         "p2.xlarge" -> pure P2_XLarge
         "p3.16xlarge" -> pure P3_16XLarge
         "p3.2xlarge" -> pure P3_2XLarge
         "p3.8xlarge" -> pure P3_8XLarge
+        "p3dn.24xlarge" -> pure P3dn_24XLarge
         "r3.2xlarge" -> pure R3_2XLarge
         "r3.4xlarge" -> pure R3_4XLarge
         "r3.8xlarge" -> pure R3_8XLarge
@@ -1835,6 +2066,56 @@ instance FromText InstanceType where
         "r4.8xlarge" -> pure R4_8XLarge
         "r4.large" -> pure R4_Large
         "r4.xlarge" -> pure R4_XLarge
+        "r5.large" -> pure R5_Large
+        "r5.xlarge" -> pure R5_XLarge
+        "r5.2xlarge" -> pure R5_2XLarge
+        "r5.4xlarge" -> pure R5_4XLarge
+        "r5.8xlarge" -> pure R5_8XLarge
+        "r5.12xlarge" -> pure R5_12XLarge
+        "r5.16xlarge" -> pure R5_16XLarge
+        "r5.24xlarge" -> pure R5_24XLarge
+        "r5.metal" -> pure R5_Metal
+        "r5a.large" -> pure R5a_Large
+        "r5a.xlarge" -> pure R5a_XLarge
+        "r5a.2xlarge" -> pure R5a_2XLarge
+        "r5a.4xlarge" -> pure R5a_4XLarge
+        "r5a.8xlarge" -> pure R5a_8XLarge
+        "r5a.12xlarge" -> pure R5a_12XLarge
+        "r5a.16xlarge" -> pure R5a_16XLarge
+        "r5a.24xlarge" -> pure R5a_24XLarge
+        "r5ad.large" -> pure R5ad_Large
+        "r5ad.xlarge" -> pure R5ad_XLarge
+        "r5ad.2xlarge" -> pure R5ad_2XLarge
+        "r5ad.4xlarge" -> pure R5ad_4XLarge
+        "r5ad.8xlarge" -> pure R5ad_8XLarge
+        "r5ad.12xlarge" -> pure R5ad_12XLarge
+        "r5ad.16xlarge" -> pure R5ad_16XLarge
+        "r5ad.24xlarge" -> pure R5ad_24XLarge
+        "r5d.large" -> pure R5d_Large
+        "r5d.xlarge" -> pure R5d_XLarge
+        "r5d.2xlarge" -> pure R5d_2XLarge
+        "r5d.4xlarge" -> pure R5d_4XLarge
+        "r5d.8xlarge" -> pure R5d_8XLarge
+        "r5d.12xlarge" -> pure R5d_12XLarge
+        "r5d.16xlarge" -> pure R5d_16XLarge
+        "r5d.24xlarge" -> pure R5d_24XLarge
+        "r5d.metal" -> pure R5d_Metal
+        "r5dn.large" -> pure R5dn_Large
+        "r5dn.xlarge" -> pure R5dn_XLarge
+        "r5dn.2xlarge" -> pure R5dn_2XLarge
+        "r5dn.4xlarge" -> pure R5dn_4XLarge
+        "r5dn.8xlarge" -> pure R5dn_8XLarge
+        "r5dn.12xlarge" -> pure R5dn_12XLarge
+        "r5dn.16xlarge" -> pure R5dn_16XLarge
+        "r5dn.24xlarge" -> pure R5dn_24XLarge
+        "r5n.large" -> pure R5n_Large
+        "r5n.xlarge" -> pure R5n_XLarge
+        "r5n.2xlarge" -> pure R5n_2XLarge
+        "r5n.4xlarge" -> pure R5n_4XLarge
+        "r5n.8xlarge" -> pure R5n_8XLarge
+        "r5n.12xlarge" -> pure R5n_12XLarge
+        "r5n.16xlarge" -> pure  R5n_16XLarge
+        "r5n.24xlarge" -> pure R5n_24XLarge
         "t1.micro" -> pure T1_Micro
         "t2.2xlarge" -> pure T2_2XLarge
         "t2.large" -> pure T2_Large
@@ -1843,7 +2124,23 @@ instance FromText InstanceType where
         "t2.nano" -> pure T2_Nano
         "t2.small" -> pure T2_Small
         "t2.xlarge" -> pure T2_XLarge
+        "t3.2xlarge" -> pure T3_2XLarge
+        "t3.large" -> pure T3_Large
         "t3.medium" -> pure T3_Medium
+        "t3.micro" -> pure T3_Micro
+        "t3.nano" -> pure T3_Nano
+        "t3.small" -> pure T3_Small
+        "t3a.2xlarge" -> pure T3a_2XLarge
+        "t3.xlarge" -> pure T3_XLarge
+        "t3a.large" -> pure T3a_Large
+        "t3a.medium" -> pure T3a_Medium
+        "t3a.micro" -> pure T3a_Micro
+        "t3a.nano" -> pure T3a_Nano
+        "t3a.small" -> pure T3a_Small
+        "t3a.xlarge" -> pure T3a_XLarge
+        "u-6tb1.metal" -> pure U6TB1_Metal
+        "u-9tb1.metal" -> pure U9TB1_Metal
+        "u-12tb1.metal" -> pure U12TB1_Metal
         "x1.16xlarge" -> pure X1_16XLarge
         "x1.32xlarge" -> pure X1_32XLarge
         "x1e.16xlarge" -> pure X1e_16XLarge
@@ -1852,11 +2149,24 @@ instance FromText InstanceType where
         "x1e.4xlarge" -> pure X1e_4XLarge
         "x1e.8xlarge" -> pure X1e_8XLarge
         "x1e.xlarge" -> pure X1e_XLarge
+        "z1d.large" -> pure Z1d_Large
+        "z1d.xlarge" -> pure Z1d_XLarge
+        "z1d.2xlarge" -> pure Z1d_2XLarge
+        "z1d.3xlarge" -> pure Z1d_3XLarge
+        "z1d.6xlarge" -> pure Z1d_6XLarge
+        "z1d.12xlarge" -> pure Z1d_12XLarge
+        "z1d.metal" -> pure Z1d_Metal
         e -> fromTextError $ "Failure parsing InstanceType from value: '" <> e
-           <> "'. Accepted values: c1.medium, c1.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, c3.large, c3.xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, c4.large, c4.xlarge, c5.18xlarge, c5.2xlarge, c5.4xlarge, c5.9xlarge, c5.large, c5.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge, d2.xlarge, f1.16xlarge, f1.2xlarge, g2.2xlarge, g2.8xlarge, g3.16xlarge, g3.4xlarge, g3.8xlarge, h1.16xlarge, h1.2xlarge, h1.4xlarge, h1.8xlarge, hi1.4xlarge, hs1.8xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, i2.xlarge, i3.16xlarge, i3.2xlarge, i3.4xlarge, i3.8xlarge, i3.large, i3.xlarge, m1.large, m1.medium, m1.small, m1.xlarge, m2.2xlarge, m2.4xlarge, m2.xlarge, m3.2xlarge, m3.large, m3.medium, m3.xlarge, m4.10xlarge, m4.16xlarge, m4.2xlarge, m4.4xlarge, m4.large, m4.xlarge, m5.12xlarge, m5.24xlarge, m5.2xlarge, m5.4xlarge, m5.large, m5.xlarge, p2.16xlarge, p2.8xlarge, p2.xlarge, p3.16xlarge, p3.2xlarge, p3.8xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, r3.large, r3.xlarge, r4.16xlarge, r4.2xlarge, r4.4xlarge, r4.8xlarge, r4.large, r4.xlarge, t1.micro, t2.2xlarge, t2.large, t2.medium, t2.micro, t2.nano, t2.small, t2.xlarge, x1.16xlarge, x1.32xlarge, x1e.16xlarge, x1e.2xlarge, x1e.32xlarge, x1e.4xlarge, x1e.8xlarge, x1e.xlarge"
+           <> "'. Accepted values: a1.2xlarge, a1.4xlarge, a1.large, a1.medium, a1.metal, a1.xlarge, c1.medium, c1.xlarge, c3.2xlarge, c3.4xlarge, c3.8xlarge, c3.large, c3.xlarge, c4.2xlarge, c4.4xlarge, c4.8xlarge, c4.large, c4.xlarge, c5.18xlarge, c5.2xlarge, c5.4xlarge, c5.9xlarge, c5.large, c5.metal, c5.xlarge, c5d.large, c5d.xlarge, c5d.2xlarge, c5d.4xlarge, c5d.9xlarge, c5d.18xlarge, c5n.large, c5n.xlarge, c5n.2xlarge, c5n.4xlarge, c5n.9xlarge, c5n.18xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge, cr1.8xlarge, d2.2xlarge, d2.4xlarge, d2.8xlarge, d2.xlarge, f1.16xlarge, f1.2xlarge, f1.4xlarge, g2.2xlarge, g2.8xlarge, g3.16xlarge, g3.4xlarge, g3.8xlarge, g3s.xlarge, g4dn.12xlarge, g4dn.16xlarge, g4dn.2xlarge, g4dn.4xlarge, g4dn.8xlarge, g4dn.xlarge, h1.16xlarge, h1.2xlarge, h1.4xlarge, h1.8xlarge, hi1.4xlarge, hs1.8xlarge, i2.2xlarge, i2.4xlarge, i2.8xlarge, i2.xlarge, i3.16xlarge, i3.2xlarge, i3.4xlarge, i3.8xlarge, i3.large, i3.xlarge, i3.metal, i3en.large, i3en.xlarge, i3en.2xlarge, i3en.3xlarge, i3en.6xlarge, i3en.12xlarge, i3en.24xlarge, i3en.metal, m1.large, m1.medium, m1.small, m1.xlarge, m2.2xlarge, m2.4xlarge, m2.xlarge, m3.2xlarge, m3.large, m3.medium, m3.xlarge, m4.10xlarge, m4.16xlarge, m4.2xlarge, m4.4xlarge, m4.large, m4.xlarge, m5.12xlarge, m5.24xlarge, m5.2xlarge, m5.4xlarge, m5.large, m5.xlarge, m5.metal, m5a.large, m5a.xlarge, m5a.2xlarge, m5a.4xlarge, m5a.8xlarge, m5a.12xlarge, m5a.16xlarge, m5a.24xlarge, m5ad.large, m5ad.xlarge, m5ad.2xlarge, m5ad.4xlarge, m5ad.8xlarge, m5ad.12xlarge, m5ad.16xlarge, m5ad.24xlarge, m5d.large, m5d.xlarge, m5d.2xlarge, m5d.4xlarge, m5d.8xlarge, m5d.12xlarge, m5d.16xlarge, m5d.24xlarge, m5d.metal, m5dn.large, m5dn.xlarge, m5dn.2xlarge, m5dn.4xlarge, m5dn.8xlarge, m5dn.12xlarge, m5dn.16xlarge, m5dn.24xlarge, m5n.large, m5n.xlarge, m5n.2xlarge, m5n.4xlarge, m5n.8xlarge, m5n.12xlarge, m5n.16xlarge, m5n.24xlarge, p2.16xlarge, p2.8xlarge, p2.xlarge, p3.16xlarge, p3.2xlarge, p3.8xlarge, p3dn.24xlarge, r3.2xlarge, r3.4xlarge, r3.8xlarge, r3.large, r3.xlarge, r4.16xlarge, r4.2xlarge, r4.4xlarge, r4.8xlarge, r4.large, r4.xlarge, r5.large, r5.xlarge, r5.2xlarge, r5.4xlarge, r5.8xlarge, r5.12xlarge, r5.16xlarge, r5.24xlarge, r5.metal, r5a.large, r5a.xlarge, r5a.2xlarge, r5a.4xlarge, r5a.8xlarge, r5a.12xlarge, r5a.16xlarge, r5a.24xlarge, r5ad.large, r5ad.xlarge, r5ad.2xlarge, r5ad.4xlarge, r5ad.8xlarge, r5ad.12xlarge, r5ad.16xlarge, r5ad.24xlarge, r5d.large, r5d.xlarge, r5d.2xlarge, r5d.4xlarge, r5d.8xlarge, r5d.12xlarge, r5d.16xlarge, r5d.24xlarge, r5d.metal, r5dn.large, r5dn.xlarge, r5dn.2xlarge, r5dn.4xlarge, r5dn.8xlarge, r5dn.12xlarge, r5dn.16xlarge, r5dn.24xlarge, r5n.large, r5n.xlarge, r5n.2xlarge, r5n.4xlarge, r5n.8xlarge, r5n.12xlarge, r5n.16xlarge, r5n.24xlarge, t1.micro, t2.2xlarge, t2.large, t2.medium, t2.micro, t2.nano, t2.small, t2.xlarge, t3.2xlarge, t3.large, t3.medium, t3.micro, t3.nano, t3.small, t3a.2xlarge, t3.xlarge, t3a.large, t3a.medium, t3a.micro, t3a.nano, t3a.small, t3a.xlarge, u-6tb1.metal, u-9tb1.metal, u-12tb1.metal, x1.16xlarge, x1.32xlarge, x1e.16xlarge, x1e.2xlarge, x1e.32xlarge, x1e.4xlarge, x1e.8xlarge, x1e.xlarge, z1d.metal, z1d.large, z1d.xlarge, z1d.2xlarge, z1d.3xlarge, z1d.6xlarge, z1d.12xlarge"
 
 instance ToText InstanceType where
     toText = \case
+        A1_2XLarge -> "a1.2xlarge"
+        A1_4XLarge -> "a1.4xlarge"
+        A1_Large -> "a1.large"
+        A1_Medium -> "a1.medium"
+        A1_Metal -> "a1.metal"
+        A1_XLarge -> "a1.xlarge"
         C1_Medium -> "c1.medium"
         C1_XLarge -> "c1.xlarge"
         C3_2XLarge -> "c3.2xlarge"
@@ -1874,7 +2184,20 @@ instance ToText InstanceType where
         C5_4XLarge -> "c5.4xlarge"
         C5_9XLarge -> "c5.9xlarge"
         C5_Large -> "c5.large"
+        C5_Metal -> "c5.metal"
         C5_XLarge -> "c5.xlarge"
+        C5d_Large -> "c5d.large"
+        C5d_XLarge -> "c5d.xlarge"
+        C5d_2XLarge -> "c5d.2xlarge"
+        C5d_4XLarge -> "c5d.4xlarge"
+        C5d_9XLarge -> "c5d.9xlarge"
+        C5d_18XLarge -> "c5d.18xlarge"
+        C5n_Large -> "c5n.large"
+        C5n_XLarge -> "c5n.xlarge"
+        C5n_2XLarge -> "c5n.2xlarge"
+        C5n_4XLarge -> "c5n.4xlarge"
+        C5n_9XLarge -> "c5n.9xlarge"
+        C5n_18XLarge -> "c5n.18xlarge"
         CC1_4XLarge -> "cc1.4xlarge"
         CC2_8XLarge -> "cc2.8xlarge"
         CG1_4XLarge -> "cg1.4xlarge"
@@ -1885,11 +2208,19 @@ instance ToText InstanceType where
         D2_XLarge -> "d2.xlarge"
         F1_16XLarge -> "f1.16xlarge"
         F1_2XLarge -> "f1.2xlarge"
+        F1_4XLarge -> "f1.4xlarge"
         G2_2XLarge -> "g2.2xlarge"
         G2_8XLarge -> "g2.8xlarge"
         G3_16XLarge -> "g3.16xlarge"
         G3_4XLarge -> "g3.4xlarge"
         G3_8XLarge -> "g3.8xlarge"
+        G3s_XLarge -> "g3s.xlarge"
+        G4dn_12XLarge -> "g4dn.12xlarge"
+        G4dn_16XLarge -> "g4dn.16xlarge"
+        G4dn_2XLarge -> "g4dn.2xlarge"
+        G4dn_4XLarge -> "g4dn.4xlarge"
+        G4dn_8XLarge -> "g4dn.8xlarge"
+        G4dn_XLarge -> "g4dn.xlarge"
         H1_16XLarge -> "h1.16xlarge"
         H1_2XLarge -> "h1.2xlarge"
         H1_4XLarge -> "h1.4xlarge"
@@ -1906,6 +2237,15 @@ instance ToText InstanceType where
         I3_8XLarge -> "i3.8xlarge"
         I3_Large -> "i3.large"
         I3_XLarge -> "i3.xlarge"
+        I3_Metal -> "i3.metal"
+        I3en_Large -> "i3en.large"
+        I3en_XLarge -> "i3en.xlarge"
+        I3en_2XLarge -> "i3en.2xlarge"
+        I3en_3XLarge -> "i3en.3xlarge"
+        I3en_6XLarge -> "i3en.6xlarge"
+        I3en_12XLarge -> "i3en.12xlarge"
+        I3en_24XLarge -> "i3en.24xlarge"
+        I3en_Metal -> "i3en.metal"
         M1_Large -> "m1.large"
         M1_Medium -> "m1.medium"
         M1_Small -> "m1.small"
@@ -1929,12 +2269,55 @@ instance ToText InstanceType where
         M5_4XLarge -> "m5.4xlarge"
         M5_Large -> "m5.large"
         M5_XLarge -> "m5.xlarge"
+        M5_Metal -> "m5.metal"
+        M5a_Large -> "m5a.large"
+        M5a_XLarge -> "m5a.xlarge"
+        M5a_2XLarge -> "m5a.2xlarge"
+        M5a_4XLarge -> "m5a.4xlarge"
+        M5a_8XLarge -> "m5a.8xlarge"
+        M5a_12XLarge -> "m5a.12xlarge"
+        M5a_16XLarge -> "m5a.16xlarge"
+        M5a_24XLarge -> "m5a.24xlarge"
+        M5ad_Large -> "m5ad.large"
+        M5ad_XLarge -> "m5ad.xlarge"
+        M5ad_2XLarge -> "m5ad.2xlarge"
+        M5ad_4XLarge -> "m5ad.4xlarge"
+        M5ad_8XLarge  -> "m5ad.8xlarge"
+        M5ad_12XLarge  -> "m5ad.12xlarge"
+        M5ad_16XLarge  -> "m5ad.16xlarge"
+        M5ad_24XLarge  -> "m5ad.24xlarge"
+        M5d_Large -> "m5d.large"
+        M5d_XLarge -> "m5d.xlarge"
+        M5d_2XLarge -> "m5d.2xlarge"
+        M5d_4XLarge -> "m5d.4xlarge"
+        M5d_8XLarge -> "m5d.8xlarge"
+        M5d_12XLarge -> "m5d.12xlarge"
+        M5d_16XLarge -> "m5d.16xlarge"
+        M5d_24XLarge -> "m5d.24xlarge"
+        M5d_Metal -> "m5d.metal"
+        M5dn_Large -> "m5dn.large"
+        M5dn_XLarge -> "m5dn.xlarge"
+        M5dn_2XLarge -> "m5dn.2xlarge"
+        M5dn_4XLarge -> "m5dn.4xlarge"
+        M5dn_8XLarge -> "m5dn.8xlarge"
+        M5dn_12XLarge -> "m5dn.12xlarge"
+        M5dn_16XLarge -> "m5dn.16xlarge"
+        M5dn_24XLarge -> "m5dn.24xlarge"
+        M5n_Large -> "m5n.large"
+        M5n_XLarge -> "m5n.xlarge"
+        M5n_2XLarge -> "m5n.2xlarge"
+        M5n_4XLarge -> "m5n.4xlarge"
+        M5n_8XLarge -> "m5n.8xlarge"
+        M5n_12XLarge -> "m5n.12xlarge"
+        M5n_16XLarge -> "m5n.16xlarge"
+        M5n_24XLarge -> "m5n.24xlarge"
         P2_16XLarge -> "p2.16xlarge"
         P2_8XLarge -> "p2.8xlarge"
         P2_XLarge -> "p2.xlarge"
         P3_16XLarge -> "p3.16xlarge"
         P3_2XLarge -> "p3.2xlarge"
         P3_8XLarge -> "p3.8xlarge"
+        P3dn_24XLarge -> "p3dn.24xlarge"
         R3_2XLarge -> "r3.2xlarge"
         R3_4XLarge -> "r3.4xlarge"
         R3_8XLarge -> "r3.8xlarge"
@@ -1946,6 +2329,56 @@ instance ToText InstanceType where
         R4_8XLarge -> "r4.8xlarge"
         R4_Large -> "r4.large"
         R4_XLarge -> "r4.xlarge"
+        R5_Large -> "r5.large"
+        R5_XLarge -> "r5.xlarge"
+        R5_2XLarge -> "r5.2xlarge"
+        R5_4XLarge -> "r5.4xlarge"
+        R5_8XLarge -> "r5.8xlarge"
+        R5_12XLarge -> "r5.12xlarge"
+        R5_16XLarge -> "r5.16xlarge"
+        R5_24XLarge -> "r5.24xlarge"
+        R5_Metal -> "r5.metal"
+        R5a_Large -> "r5a.large"
+        R5a_XLarge -> "r5a.xlarge"
+        R5a_2XLarge -> "r5a.2xlarge"
+        R5a_4XLarge -> "r5a.4xlarge"
+        R5a_8XLarge -> "r5a.8xlarge"
+        R5a_12XLarge -> "r5a.12xlarge"
+        R5a_16XLarge -> "r5a.16xlarge"
+        R5a_24XLarge -> "r5a.24xlarge"
+        R5ad_Large -> "r5ad.large"
+        R5ad_XLarge -> "r5ad.xlarge"
+        R5ad_2XLarge -> "r5ad.2xlarge"
+        R5ad_4XLarge -> "r5ad.4xlarge"
+        R5ad_8XLarge -> "r5ad.8xlarge"
+        R5ad_12XLarge -> "r5ad.12xlarge"
+        R5ad_16XLarge -> "r5ad.16xlarge"
+        R5ad_24XLarge -> "r5ad.24xlarge"
+        R5d_Large -> "r5d.large"
+        R5d_XLarge -> "r5d.xlarge"
+        R5d_2XLarge -> "r5d.2xlarge"
+        R5d_4XLarge -> "r5d.4xlarge"
+        R5d_8XLarge -> "r5d.8xlarge"
+        R5d_12XLarge -> "r5d.12xlarge"
+        R5d_16XLarge -> "r5d.16xlarge"
+        R5d_24XLarge -> "r5d.24xlarge"
+        R5d_Metal -> "r5d.metal"
+        R5dn_Large -> "r5dn.large"
+        R5dn_XLarge -> "r5dn.xlarge"
+        R5dn_2XLarge -> "r5dn.2xlarge"
+        R5dn_4XLarge -> "r5dn.4xlarge"
+        R5dn_8XLarge -> "r5dn.8xlarge"
+        R5dn_12XLarge -> "r5dn.12xlarge"
+        R5dn_16XLarge -> "r5dn.16xlarge"
+        R5dn_24XLarge -> "r5dn.24xlarge"
+        R5n_Large -> "r5n.large"
+        R5n_XLarge -> "r5n.xlarge"
+        R5n_2XLarge -> "r5n.2xlarge"
+        R5n_4XLarge -> "r5n.4xlarge"
+        R5n_8XLarge -> "r5n.8xlarge"
+        R5n_12XLarge -> "r5n.12xlarge"
+        R5n_16XLarge -> "r5n.16xlarge"
+        R5n_24XLarge -> "r5n.24xlarge"
         T1_Micro -> "t1.micro"
         T2_2XLarge -> "t2.2xlarge"
         T2_Large -> "t2.large"
@@ -1954,7 +2387,23 @@ instance ToText InstanceType where
         T2_Nano -> "t2.nano"
         T2_Small -> "t2.small"
         T2_XLarge -> "t2.xlarge"
+        T3_2XLarge -> "t3.2xlarge"
+        T3_Large -> "t3.large"
         T3_Medium -> "t3.medium"
+        T3_Micro -> "t3.micro"
+        T3_Nano -> "t3.nano"
+        T3_Small -> "t3.small"
+        T3a_2XLarge -> "t3a.2xlarge"
+        T3_XLarge -> "t3.xlarge"
+        T3a_Large -> "t3a.large"
+        T3a_Medium -> "t3a.medium"
+        T3a_Micro -> "t3a.micro"
+        T3a_Nano -> "t3a.nano"
+        T3a_Small -> "t3a.small"
+        T3a_XLarge -> "t3a.xlarge"
+        U6TB1_Metal -> "u-6tb1.metal"
+        U9TB1_Metal -> "u-9tb1.metal"
+        U12TB1_Metal -> "u-12tb1.metal"
         X1_16XLarge -> "x1.16xlarge"
         X1_32XLarge -> "x1.32xlarge"
         X1e_16XLarge -> "x1e.16xlarge"
@@ -1963,6 +2412,13 @@ instance ToText InstanceType where
         X1e_4XLarge -> "x1e.4xlarge"
         X1e_8XLarge -> "x1e.8xlarge"
         X1e_XLarge -> "x1e.xlarge"
+        Z1d_Metal -> "z1d.metal"
+        Z1d_Large -> "z1d.large"
+        Z1d_XLarge -> "z1d.xlarge"
+        Z1d_2XLarge -> "z1d.2xlarge"
+        Z1d_3XLarge -> "z1d.3xlarge"
+        Z1d_6XLarge -> "z1d.6xlarge"
+        Z1d_12XLarge -> "z1d.12xlarge"
 
 instance Hashable     InstanceType
 instance NFData       InstanceType
